@@ -1,0 +1,37 @@
+<ion-header [translucent]="true">
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-title>Profile</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content fullscreen scroll-y="true" color="light">
+    <ion-list>
+        <ion-item lines="none">
+            <ion-avatar slot="start" >
+                <img color="primary" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAyMi4wLjEsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeD0iMHB4IiB5PSIwcHgiDQoJIHZpZXdCb3g9IjAgMCAxMDAwIDEwMDAiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDEwMDAgMTAwMDsiIHhtbDpzcGFjZT0icHJlc2VydmUiPg0KPHN0eWxlIHR5cGU9InRleHQvY3NzIj4NCgkuc3Qwe2ZpbGw6IzAwOTI0Nzt9DQo8L3N0eWxlPg0KPGc+DQoJPGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMC4wMDAwMDAsNTEyLjAwMDAwMCkgc2NhbGUoMC4xMDAwMDAsLTAuMTAwMDAwKSI+DQoJCTxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik00NjIyLjYsNTAxNi45Yy02OTMuOC03MC45LTEyMTMuMi0yMTQuNy0xNzgyLjQtNDk0LjVjLTUwMC4yLTI0NS4zLTg1Ni43LTQ5OC4zLTEyNjMtODkxLjINCgkJCWMtNDE3LjgtNDA4LjItNzIyLjYtODI4LTk4MS4zLTEzNTMuMWMtMjQxLjUtNDk0LjUtMzg5LjEtOTc5LjQtNDcxLjUtMTU1Mi40Yy0zMi42LTIyNi4yLTMyLjYtOTgxLjMsMC0xMjA3LjUNCgkJCWMxMzYuMS05NTAuNiw1MDQuMS0xODAzLjUsMTA4Mi45LTI1MDYuOWMxMzUzLjEtMTY0Mi41LDM1OTUuNS0yMjI5LDU1NzEuNS0xNDU4LjVDODA0My43LTM5NTIuNyw5MDcxLTI5MjMuNSw5NTY5LjMtMTY1MC45DQoJCQlDOTc3Mi41LTExMjcuNyw5ODc2LTYyNS42LDk4OTctNDFjNDYsMTMyNi4zLTQ0Ni42LDI2MDQuNi0xMzc0LjIsMzU2Mi45Yy00MjEuNyw0MzUuMS04MzMuNyw3MzYtMTM3MC40LDk5OC41DQoJCQljLTQ4MywyMzcuNy05MjcuNiwzNzcuNi0xNDY2LjIsNDYwQzU0OTIuOCw1MDA5LjIsNDc4OS40LDUwMzQuMSw0NjIyLjYsNTAxNi45eiBNNTYzOC40LDQ2NzUuNw0KCQkJYzk5NC43LTE0Ny42LDE5MDguOS02MDUuNiwyNjA4LjQtMTMwNy4xYzcyNC41LTcyOC4zLDExNjkuMS0xNjMxLDEzMTQuOC0yNjcxLjdjMzYuNC0yNjYuNCwzMC43LTk1Mi42LTkuNi0xMjE3DQoJCQljLTExOC44LTc3Mi40LTQxNy44LTE0OTYuOC04NjYuMy0yMDk2LjdjLTc0LjgtMTAxLjYtMTc2LjMtMjI2LjItMjI2LjItMjc5LjhsLTg4LjItOTUuOGwtMjEuMSw2My4yDQoJCQljLTEwMy41LDI4OS40LTMxNi4yLDYxOS4xLTU2OS4yLDg4NS41Yy01MjksNTU1LjgtMTIxOC45LDg5My4xLTIxMDQuNCwxMDI3LjNjLTMyMiw0OS44LTEwMzguOCw0OS44LTEzNjAuOCwwDQoJCQljLTgzMy43LTEyNi41LTE0NzUuOC00MjEuNi0xOTk3LjEtOTE4QzIyMDkuNy0yMDQwLDIwNjQtMjIwMSwxOTk1LTIyOTEuMWMtMTE1LTE1NS4zLTI5Ny4xLTQ4My0zNTAuNy02MzQuNGwtMjMtNjcuMWwtODguMiw5NS44DQoJCQljLTQ5LjgsNTMuNy0xNTEuNCwxNzguMi0yMjYuMiwyNzkuOEM0MjEuNS0xNDMyLjQsMTY0LjcsMTIwLDYxOC45LDE1MjYuOGM0NTgsMTQxMi41LDE1NjIsMjUxNi41LDI5NzYuNCwyOTcyLjYNCgkJCWMzMjIsMTA1LjQsNTk0LjEsMTU5LjEsMTA1NiwyMTAuOEM0NzkxLjMsNDcyNS41LDU0NTQuNCw0NzAyLjUsNTYzOC40LDQ2NzUuN3oiLz4NCgkJPHBhdGggY2xhc3M9InN0MCIgZD0iTTQ2NTEuNCwzMjI4LjdjLTE5Ny40LTQyLjItMzg1LjItMTE1LTU2NS40LTIyMC40Yy0xODUuOS0xMDkuMi00NzMuNC0zOTguNy01ODguNC01OTYuMQ0KCQkJYy0zNDEuMS01ODAuNy0zMjItMTI5NS42LDUzLjctMTg2MWMzMjkuNi00OTguMyw5MTgtNzk1LjQsMTUxMi4yLTc2OC42YzI2OC4zLDEzLjQsNDY1LjcsNjUuMiw3MDkuMSwxODQNCgkJCWMzNDEuMSwxNjguNyw2MDkuNSw0MzcsNzc4LjEsNzc4LjFjMTQxLjgsMjg3LjUsMTc2LjMsNDQwLjgsMTc2LjMsNzc2LjJjMCwzMjcuNy0zNC41LDQ4My0xNjYuNyw3NTcNCgkJCUM2MjEzLjQsMjk5NC45LDU0MTkuOSwzMzg5LjcsNDY1MS40LDMyMjguN3oiLz4NCgk8L2c+DQo8L2c+DQo8L3N2Zz4NCg==">
+            </ion-avatar>
+            <ion-label>
+                <small> Tài Khoản </small>
+                <p>
+                    <u>Đăng Nhập/ Đăng Ký</u>
+                    <!-- <b>UserName</b> -->
+                </p>
+            </ion-label>
+            <ion-icon slot="end" name="chevron-forward-outline"></ion-icon>
+        </ion-item>
+        <ion-item lines="none">
+            
+        </ion-item>
+        <ion-item lines="none">
+            
+        </ion-item>
+        <ion-item lines="none">
+            
+        </ion-item>
+        <ion-item lines="none">
+            
+        </ion-item>
+    </ion-list>
+  </ion-content>

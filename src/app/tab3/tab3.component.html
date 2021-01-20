@@ -1,0 +1,60 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Thông báo</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content fullscreen class="vertical-center" scroll-y="true">
+  <ion-card *ngFor="let noti of noti_list; let i = index">
+    <ion-card-content *ngIf="noti.type === 'FRequest'">
+      <ion-item button class="chat-item" lines="none" [class.unread]="noti.status === 'WAITING'">
+        <ion-icon class="icon" name="person-add" slot="start"></ion-icon>
+        <ion-label>
+          <div class="chat-description">
+            <div class="content-preview">{{noti.content}}</div>
+          </div>
+          <div class="chat-description">
+            <div class="content-preview">{{noti.created_date| VN_DateTime}}</div>
+          </div>
+        </ion-label>
+        <ion-buttons *ngIf="noti.status === 'WAITING'" slot="end">
+          <ion-button color="primary" (click)="Accept()">
+            <ion-icon name="checkmark-outline"></ion-icon>
+          </ion-button>
+          <ion-button color="danger" (click)="Decline()">
+            <ion-icon button name="trash"></ion-icon>
+          </ion-button>
+        </ion-buttons>
+      </ion-item>
+    </ion-card-content>
+    <ion-card-content *ngIf="noti.type === 'Event'">
+      <ion-item button class="chat-item" lines="none" [class.unread]="noti.status === 'WAITING'" (click)="Seen(noti._id, noti.redirect_id, i)">
+        <ion-icon class="icon" name="notifications" slot="start"></ion-icon>
+        <ion-label>
+          <h2 class="chat-name">Thông báo</h2>
+          <div class="chat-description">
+            <div class="content-preview">{{noti.content}}</div>
+          </div>
+          <div class="chat-description">
+            <div class="content-preview">{{noti.created_date| VN_DateTime}}</div>
+          </div>
+        </ion-label>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+  <ion-card>
+    
+  </ion-card>
+</ion-content>
+<ion-fab vertical="bottom" horizontal="end" slot="fixed">
+  <ion-fab-button (click)="scrollToTop()">
+    <ion-icon name="arrow-up"></ion-icon>
+  </ion-fab-button>
+</ion-fab>
+<ion-footer [translucent]="true" class="ion-no-border">
+  <ion-toolbar class="ion-text-center">
+
+  </ion-toolbar>
+</ion-footer>

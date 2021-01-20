@@ -1,0 +1,71 @@
+<ion-header translucent>
+    <ion-toolbar>
+        <ion-title></ion-title>
+        <ion-buttons slot="start" (click)="Back()">
+            <ion-button>
+                <ion-icon slot="icon-only" name="arrow-back-outline" color="primary"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+        <!-- <ion-buttons slot="end" (click)="showModalAddFriend()">
+            <ion-button>
+                <ion-icon slot="icon-only" name="add-outline" color="primary"></ion-icon>
+            </ion-button>
+        </ion-buttons> -->
+    </ion-toolbar>
+</ion-header>
+<ion-content *ngIf="task" fullscreen>
+    <ion-card>
+        <ion-card-content>
+            <ion-item>
+                <ion-label>
+                    {{task.title}}
+                </ion-label>
+                <ion-icon slot="end" style="font-size: xx-large;" [style.color]="task.selected_tag_color.color"
+                    name="flag"></ion-icon>
+            </ion-item>
+            <ion-item>
+                <label *ngIf="task.allday == false" style="margin:0;">
+                    {{task.fromTime | VN_Hour}}, {{task.fromDate | VN_Date}} - {{task.toTime | VN_Hour}} {{task.toDate |
+                    VN_Date}}
+                </label>
+                <label *ngIf="task.allday == true" style="margin:0;">
+                    {{task.fromDate | VN_Date}} - {{task.toDate | VN_Date}}
+                </label>
+            </ion-item>
+        </ion-card-content>
+    </ion-card>
+
+    <ion-card>
+        <ion-card-content>
+            <ion-row *ngIf="task.ToDoList" class="ion-justify-content-center" style="margin-top: 5px">
+                <label style="font-size: medium;">
+                    ToDoList
+                </label>
+                <ion-item *ngFor="let todo of task.ToDoList" lines="none" color="light"
+                    style="width: 100%; height: 4%; margin-bottom: 5px;">
+                    <label slot="start" nz-checkbox [(ngModel)]="todo.completed" style="margin-right: 10px;"
+                        (ngModelChange)="OnCheck(task)"></label>
+                    <ion-input name="fieldName" ngDefaultControl [(ngModel)]="todo.name"></ion-input>
+                </ion-item>
+            </ion-row>
+        </ion-card-content>
+    </ion-card>
+
+    <ion-card>
+        <ion-card-content>
+            <ion-row *ngIf="task.assign_email" class="ion-justify-content-center" style="margin-top: 5px">
+                <label style="font-size: medium;">
+                    Người tham gia
+                </label>
+                <ion-item *ngFor="let mail of task.assign_email; let i = index" lines="none" color="light"
+                    style="width: 100%; height: 4%; margin-bottom: 5px;">
+                    <label slot="start">{{mail}}</label>
+                    <i slot="end" nz-icon nzType="delete" nzTheme="outline" style="color:red;"
+                        (click)="removePerson(task, i)"></i>
+                </ion-item>
+            </ion-row>
+        </ion-card-content>
+    </ion-card>
+    
+
+</ion-content>

@@ -1,0 +1,33 @@
+<ion-header [translucent]="true" class="ion-no-border">
+	<ion-toolbar>
+		<ion-buttons slot="start">
+			<ion-back-button defaultHref="/" mode="md"></ion-back-button>
+		</ion-buttons>
+	</ion-toolbar>
+</ion-header>
+<ion-content fullscreen class="vertical-center" scroll-y="true">
+			<ion-grid>
+				<ion-row class="ion-justify-content-center">
+					<ion-text color="gray">
+						<h5></h5>
+						Nhập email của bạn để tiếp tục
+					</ion-text>
+				</ion-row>
+				<ion-row class="ion-justify-content-center">
+					<ion-item lines="none">
+						<ion-input class="ion-text-center" [(ngModel)]="Email" #autofocus
+							type="text" maxlength="50"></ion-input>
+					</ion-item>
+				</ion-row>
+				<ion-row class="ion-justify-content-center">
+				
+					<ion-button (click)="Login()" class="ion-margin" placeholder="Số điện thoại của bạn">Tiếp tục</ion-button>
+				</ion-row>
+			</ion-grid>	
+</ion-content>
+
+<ion-footer [translucent]="true" class="ion-no-border">
+	<ion-toolbar class="ion-text-center">
+		
+	</ion-toolbar>
+</ion-footer>

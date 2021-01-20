@@ -1,0 +1,17 @@
+<ion-grid *ngIf="isToday">
+  <ion-row  style="height: 10%; background:#88adff" class="ion-justify-content-center">
+      {{day}}
+  </ion-row>
+  <ion-row *ngFor="let task of tasks" ion-row style="height: 2%; background: {{task.selected_tag_color.color}}" class="ion-justify-content-center">
+    <i nz-icon nzType="exclamation" nzTheme="outline"></i>
+  </ion-row>
+  
+</ion-grid>	
+<ion-grid *ngIf="!isToday">
+  <ion-row  style="height: 10%;" class="ion-justify-content-center">
+      {{day}}
+  </ion-row>
+  <ion-row *ngFor="let task of tasks" ion-row style="height: 2%; background: {{task.selected_tag_color.color}}" class="ion-justify-content-center">
+    <i nz-icon nzType="exclamation" nzTheme="outline"></i>
+  </ion-row>
+</ion-grid>

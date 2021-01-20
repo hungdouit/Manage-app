@@ -1,0 +1,33 @@
+
+  .chat-item {
+    margin-bottom: 12px;
+  
+    .chat-description {
+      font-size: 14px;
+      display: flex;
+    }
+    &.unread {
+      .chat-name {
+        font-weight: 700;
+      }
+  
+      .chat-description {
+        color: var(--ion-color-dark);
+        font-weight: 700;
+      }
+  
+      .online-status.unread {
+        display: block;
+      }
+    }
+  }
+  .mr { margin-right: 16px}
+.selected {
+    z-index: 0;
+    border: 0.4px solid #1890ff;
+    opacity: 0.8;
+}
+
+
+
+

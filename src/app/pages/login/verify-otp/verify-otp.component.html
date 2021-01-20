@@ -1,0 +1,35 @@
+<ion-header [translucent]="true" class="ion-no-border">
+	<ion-toolbar>
+		<ion-buttons slot="start" (click)="closeModal()">
+			<ion-button>
+				<ion-icon slot="icon-only" name="arrow-back-outline" color="dark"></ion-icon>
+			</ion-button>
+		</ion-buttons>
+	</ion-toolbar>
+</ion-header>
+<ion-content fullscreen class="ion-padding ion-text-center" scroll-y="true">
+
+
+		<!-- <img src="../assets/otp.svg"/> -->
+	
+			<ion-text color="gray">
+				<p>Nhập mã vừa gửi đến Email: {{email}}<br><b></b> </p>
+			</ion-text>
+	
+			<ion-text class="ion-text-center otp ion-justify-content-between">
+				<ion-input (ionChange)="handler_on_input($event.target.value)" [(ngModel)]="otp" #autofocus id="single-factor-code-text-field" autocomplete="one-time-code" inputmode="numeric" pattern="[0-9]*" type="text" maxlength="6" size="6" class="ion-text-center" placeholder="000000"></ion-input>
+			</ion-text>
+		
+		
+			
+
+  </ion-content>
+  <ion-footer [translucent]="true" class="ion-no-border">
+	<ion-toolbar class="ion-text-center">
+		<ion-item lines="none" class="ion-text-center">
+			<ion-label>{{counter}}</ion-label>
+		</ion-item>
+		<ion-button (click)="resendOTP()" [disabled]="DisabledResendButton" color="primary" fill="clear">Gửi lại <ion-icon slot="end" name="reload-outline"></ion-icon></ion-button>
+		<ion-button [disabled]="DisabledConfirmButton" (click)="confirmOTP()" class="ion-margin">Xác nhận</ion-button>
+	</ion-toolbar>
+</ion-footer>

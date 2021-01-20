@@ -1,0 +1,40 @@
+<ion-header>
+	<!-- <ion-toolbar>
+		<button style="margin-top: 20px; margin-left: 20px;" [nzSize]='large' (click)="dismissModal()" nz-button nzType="text" slot="start">
+			<i nz-icon nzType="close" nzTheme="outline" style="color: #2dd36f;"></i>
+		</button>
+		<button style="margin-top: 20px; margin-right: 20px;" [nzSize]='large' (click)="confirmModal()" nz-button nzType="text" slot="end">
+			<i nz-icon nzType="check" nzTheme="outline" style="color: #2dd36f;"></i>
+		</button>
+    </ion-toolbar> -->
+    <ion-toolbar>
+        <ion-title>Thông báo</ion-title>
+        <ion-buttons slot="end">
+          <ion-button style="color: #2dd36f;" (click)="dismissModal()">Đóng</ion-button>
+        </ion-buttons>
+      </ion-toolbar>
+</ion-header>
+<ion-content fullscreen class="vertical-center" scroll-y="true">
+	<ion-card>
+        <ion-card-content>
+          <ion-item button
+          class="chat-item"
+          lines="none"
+          [class.unread]="1">
+            <ion-icon name="pizza" slot="start"></ion-icon>
+            <ion-label>
+              <h2 class="chat-name">Thông báo</h2>
+            <div class="chat-description">
+              <div class="content-preview">Thông báo chi tiết</div>
+            </div>
+            </ion-label>
+          </ion-item>
+        </ion-card-content>
+    </ion-card>
+</ion-content>
+
+<ion-footer [translucent]="true" class="ion-no-border">
+	<ion-toolbar class="ion-text-center">
+		
+	</ion-toolbar>
+</ion-footer>

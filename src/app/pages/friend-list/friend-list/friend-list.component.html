@@ -1,0 +1,75 @@
+<ion-header translucent>
+    <ion-toolbar>
+        <ion-title>Bạn bè</ion-title>
+        <ion-buttons slot="start" (click)="dismissModal()">
+            <ion-button>
+                <ion-icon slot="icon-only" name="arrow-back-outline" color="primary"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+        <ion-buttons slot="end" (click)="showModalAddFriend()">
+            <ion-button>
+                <ion-icon slot="icon-only" name="add-outline" color="primary"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+    </ion-toolbar>
+    <ion-toolbar>
+        <ion-searchbar ngDefaultControl [(ngModel)]="search" showCancelButton="always" (keyup)="handler_Search($event)" ></ion-searchbar>
+    </ion-toolbar>
+</ion-header>
+<ion-content fullscreen>
+    <ion-list>
+        <ion-list-header>
+            Lời mời kết bạn
+        </ion-list-header>
+        <ion-item *ngFor="let rq of frRequestList">
+            <ion-avatar slot="start">
+                <img src="https://cdn0.iconfinder.com/data/icons/user-pictures/100/unknown_1-512.png">
+            </ion-avatar>
+            <ion-label>
+                <!-- <h2>{{rq.sender}}</h2> -->
+                <h3>{{rq.content}}</h3>
+            </ion-label>
+            <ion-buttons slot="end">
+                <ion-button color="primary" (click)="Accept(rq.owner, rq.sender)">
+                    <ion-icon name="checkmark-outline"></ion-icon>
+                </ion-button>
+                <ion-button color="danger" (click)="Decline(rq.owner, rq.sender)">
+                    <ion-icon name="close-outline"></ion-icon>
+                </ion-button>
+            </ion-buttons>
+        </ion-item>
+    </ion-list>
+    <ion-list>
+        <ion-list-header>
+            Danh sách bạn bè
+        </ion-list-header>
+        <div *ngIf="friendList">
+            <ion-item *ngFor="let fr of friendList.friends">
+                <ion-avatar slot="start">
+                    <img src="https://cdn0.iconfinder.com/data/icons/user-pictures/100/unknown_1-512.png">
+                </ion-avatar>
+                <ion-label>
+                    <h2>{{fr}}</h2>
+                    <!-- <h3>New Ride</h3>
+                                    <p>I just upgraded my X-Wing. Next time...</p> -->
+                </ion-label>
+                <label slot="end" nz-checkbox [nzIndeterminate]="indeterminate">
+                </label>
+            </ion-item>
+        </div>
+    </ion-list>
+</ion-content>
+<nz-modal [(nzVisible)]="isVisible" [nzFooter]="modalFooter" (nzOnCancel)="handleCancel()" (nzOnOk)="handleOk()"> 
+    <ng-container *nzModalContent>
+        <div style="margin-top: 20px;">
+            <nz-input-group nzSearch [nzAddOnAfter]="suffixIconButton">
+                <input type="text" nz-input placeholder="Email" [(ngModel)]="email_to_add" />
+            </nz-input-group>
+            <ng-template #suffixIconButton>
+                <button (click)="handler_send_fr_request()" style="color: #2dd36f;" nz-button nzType="default" nzSearch><i nz-icon nzType="user-add" nzTheme="outline"></i></button>
+            </ng-template>
+        </div>
+    </ng-container>
+    <ng-template #modalFooter>
+    </ng-template>
+</nz-modal>

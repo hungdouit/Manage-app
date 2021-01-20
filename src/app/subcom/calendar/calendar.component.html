@@ -1,0 +1,107 @@
+<ion-grid style="height: 100%; width: 100%"> 
+  <ion-row style="height:10%;">
+    <ion-col size="12/7">
+      <div (click)="toNow()" style="display: flex; justify-content: center;">
+        Now
+      </div>
+    </ion-col>
+    <ion-col size="60/7">
+      <div style="display: flex; justify-content: center;">
+        tháng {{month.month}} năm {{month.year}}
+      </div>
+    </ion-col>
+    <ion-col size="12/7">
+      <div style="display: flex; justify-content: center;">
+        <ion-icon name="swap-vertical-outline"></ion-icon>
+      </div>
+    </ion-col>
+  </ion-row>
+  <ion-row style="height:5%;">
+    <ion-item-divider style="padding: 0px 0px 0px 0px;">
+      <ion-col>
+        <div style="display: flex; justify-content: center;">
+          CN
+        </div>
+      </ion-col>
+      <ion-col>
+        <div style="display: flex; justify-content: center;">
+          T.2
+        </div>
+      </ion-col>
+      <ion-col>
+        <div style="display: flex; justify-content: center;">
+          T.3
+        </div>
+      </ion-col>
+      <ion-col>
+        <div style="display: flex; justify-content: center;">
+          T.4
+        </div>
+      </ion-col>
+      <ion-col>
+        <div style="display: flex; justify-content: center;">
+          T.5
+        </div>
+      </ion-col>
+      <ion-col>
+        <div style="display: flex; justify-content: center;">
+          T.6
+        </div>
+      </ion-col>
+      <ion-col>
+        <div style="display: flex; justify-content: center;">
+          T.7
+        </div>
+      </ion-col>
+    </ion-item-divider>
+  </ion-row>
+  <div style="height:80%;" *ngIf="!isLoading">
+    <ion-row style="height: 16.6%;"> 
+      <ion-item-divider color="light" style="padding: 0px 0px 0px 0px;">
+        <ion-col (click)="onClickShowTask(day, month.month, month.year)" style="height: 100%; width: 100%;" *ngFor="let day of week1">
+          <app-day-detail [day]=day [month]= month.month [year]=month.year></app-day-detail>
+        </ion-col>
+      </ion-item-divider>
+    </ion-row>
+    <ion-row style="height: 16.6%;"> 
+      <ion-item-divider color="light" style="padding: 0px 0px 0px 0px;">
+        <ion-col (click)="onClickShowTask(day, month.month, month.year)" style="height: 100%; width: 100%;" *ngFor="let day of week2">
+          <app-day-detail [day]=day [month]= month.month [year]=month.year ></app-day-detail>
+        </ion-col>
+      </ion-item-divider>
+    </ion-row>
+    <ion-row style="height: 16.6%;"> 
+      <ion-item-divider color="light" style="padding: 0px 0px 0px 0px;">
+        <ion-col (click)="onClickShowTask(day, month.month, month.year)" style="height: 100%; width: 100%;" *ngFor="let day of week3">
+          <app-day-detail [day]=day [month]= month.month [year]=month.year></app-day-detail>
+        </ion-col>
+      </ion-item-divider>
+    </ion-row>
+    <ion-row style="height: 16.6%;"> 
+      <ion-item-divider color="light" style="padding: 0px 0px 0px 0px;">
+        <ion-col (click)="onClickShowTask(day, month.month, month.year)" style="height: 100%; width: 100%;" *ngFor="let day of week4">
+          <app-day-detail [day]=day [month]= month.month [year]=month.year ></app-day-detail>
+        </ion-col>
+      </ion-item-divider>
+    </ion-row>
+    <ion-row style="height: 16.6%;"> 
+      <ion-item-divider color="light" style="padding: 0px 0px 0px 0px;">
+        <ion-col (click)="onClickShowTask(day, month.month, month.year)" style="height: 100%; width: 100%;" *ngFor="let day of week5">
+          <app-day-detail [day]=day [month]= month.month [year]=month.year></app-day-detail>
+        </ion-col>
+      </ion-item-divider>
+    </ion-row>
+    <ion-row style="height: 16.6%;"> 
+      <ion-item-divider color="light" style="padding: 0px 0px 0px 0px;">
+        <ion-col (click)="onClickShowTask(day, month.month, month.year)" style="height: 100%; width: 100%;" *ngFor="let day of week6">
+          <app-day-detail [day]=day [month]= month.month [year]=month.year></app-day-detail>
+        </ion-col>
+      </ion-item-divider>
+    </ion-row>
+  </div>
+  <div *ngIf="isLoading">
+    <ion-row style="height: 100%;"> 
+      <ion-spinner name="lines"></ion-spinner>
+    </ion-row>
+  </div>
+</ion-grid>

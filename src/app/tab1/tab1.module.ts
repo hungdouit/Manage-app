@@ -1,20 +1,24 @@
-import { IonicModule } from '@ionic/angular';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
-import { Tab1Page } from './tab1.page';
-import { ExploreContainerComponentModule } from '../explore-container/explore-container.module';
 
-import { Tab1PageRoutingModule } from './tab1-routing.module';
+import { Tab1RoutingModule } from './tab1-routing.module';
+import { Tab1Component } from './tab1.component';
+import { SubcomModule } from '../subcom/subcom.module';
+import { antModule } from '../ant/ant.module';
+import { SharedModule } from '../shared.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 
 @NgModule({
+  declarations: [Tab1Component],
   imports: [
-    IonicModule,
     CommonModule,
+    Tab1RoutingModule,
+    SubcomModule,
+    antModule,
+    SharedModule,
     FormsModule,
-    ExploreContainerComponentModule,
-    Tab1PageRoutingModule
-  ],
-  declarations: [Tab1Page]
+    ReactiveFormsModule,
+  ]
 })
-export class Tab1PageModule {}
+export class Tab1Module { }
